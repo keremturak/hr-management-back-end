@@ -140,16 +140,29 @@ Remember, "kicking the tires" is all about getting hands-on experience and makin
 
 
 ### Dependencies
+![Dependencies](https://github.com/keremturak/HR-Management-Documentation/blob/main/docs/img/Gradle_logo.png?raw=true)
+
 |      | Tech     | Url |
 |----| -------- | ------- |
 |1| Spring Boot Data Jpa  | implementation 'org.springframework.boot:spring-boot-starter-data-jpa'    |
-|2| Spring Boot Web | implementation 'org.springframework.boot:spring-boot-starter-web'     |
-|3| Lombok    |compileOnly 'org.projectlombok:lombok'-----annotationProcessor 'org.projectlombok:lombok'    |
-|4| MySql  | implementation 'mysql:mysql-connector-java:8.0.33'    |
-|5| Swagger Ui | implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0'     |
-|6| Mapstruct    | implementation 'org.mapstruct:mapstruct:1.5.5.Final'   |
-|7| Spring Boot Starter Mail  | implementation 'org.springframework.boot:spring-boot-starter-mail:3.1.1'   |
-|8| Validator | 	implementation  'org.hibernate.validator:hibernate-validator:8.0.0.Final'    |
+|2| tymelift | "org.thymeleaf:thymeleaf-spring5:3.0.11.RELEASE"    |
+|3| springDataMongodb  | "org.springframework.boot:spring-boot-starter-data-mongodb:${versions.springBoot}"    |
+|4| postgreSql  | "org.postgresql:postgresql:${versions.postgreSql}"    |
+|5| springBootRabbitMQ  | "org.springframework.boot:spring-boot-starter-amqp:${versions.springBoot}"    |
+|6| Spring Boot Web | implementation 'org.springframework.boot:spring-boot-starter-web'     |
+|7| Lombok    |compileOnly 'org.projectlombok:lombok'-----annotationProcessor 'org.projectlombok:lombok'    |
+|8| MySql  | implementation 'mysql:mysql-connector-java:8.0.33'    |
+|9| Swagger Ui | implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0'     |
+|10| Mapstruct    | implementation 'org.mapstruct:mapstruct:1.5.5.Final'   |
+|11| Spring Boot Starter Mail  | implementation 'org.springframework.boot:spring-boot-starter-mail:3.1.1'   |
+|12| javaJWT  | "com.auth0:java-jwt:${versions.jwt}"    |
+|13| springCloudConfigServer | 	"org.springframework.cloud:spring-cloud-config-server:${versions.springCloud}"    |
+|14| springCloudConfigClient | 	"org.springframework.cloud:spring-cloud-config-client:${versions.springCloud}"    |
+|15| springCloudConfigStarter | 	"org.springframework.cloud:spring-cloud-starter-config:${versions.springCloud}"    |
+|16| Validator | 	implementation  'org.hibernate.validator:hibernate-validator:8.0.0.Final'    |
+|17| springCloudStarterApiGateway | 	"org.springframework.cloud:spring-cloud-starter-gateway:${versions.springCloud}"    |
+|18| springCloudCircuitBreaker | 	"org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j:${versions.circuitBreaker}"    |
+|19| springCloudCircuitReactor | 	"org.springframework.cloud:spring-cloud-starter-circuitbreaker-reactor-resilience4j:${versions.circuitBreaker}"    |
 
 
 
