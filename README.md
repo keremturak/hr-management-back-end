@@ -172,6 +172,55 @@ Remember, "kicking the tires" is all about getting hands-on experience and makin
 
 ## Usage/Examples
 
+The code block that copies and stores the profile picture selected by the user into our system as an example.
+
+```java
+    @Value("${IMAGE_SOURCE}")
+    private String uploadPath;
+    public String copyProfilePhoto(MultipartFile file, Long userAuthId) {
+        try {
+            User user = userRepository.findOptionalByAuthid(userAuthId).orElse(null);
+            String fileName = userAuthId.toString()+".jpg";
+            String filePath = uploadPath + File.separator + fileName;
+            System.out.println("file path"+filePath);
+            file.transferTo(new File(filePath));
+            if (user != null) {
+                user.setAvatar(fileName);
+                userRepository.save(user);
+            }
+            return "success";
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "failed";
+        }
+    }
+```
+
+Example email sending
+
+```java
+    public String sendGuestActivationMail(GuestMailRegisterModel guestMailRegisterModel) throws MessagingException {
+        String templateName = "authentication-email";
+        MimeMessage mimeMessage = mailSender.createMimeMessage();
+        MimeMessageHelper helper = new MimeMessageHelper(
+                mimeMessage,
+                MimeMessageHelper.MULTIPART_MODE_MIXED,
+                StandardCharsets.UTF_8.name()
+        );
+        Map<String, Object> properties = new HashMap<>();
+        properties.put("username", guestMailRegisterModel.getUsername());
+        CONFIRMATION_URL = String.format(CONFIRMATION_URL);
+        properties.put("confirmationUrl", CONFIRMATION_URL);
+        Context context = new Context();
+        context.setVariables(properties);
+        helper.setTo(guestMailRegisterModel.getPersonalEmail());
+        helper.setSubject("Welcome to our nice platform");
+        String template = templateEngine.process(templateName, context);
+        helper.setText(template, true);
+        mailSender.send(mimeMessage);
+        return "success";
+    }
+```
 
 
 ## How To Run
